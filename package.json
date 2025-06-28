@@ -1,16 +1,33 @@
 {
-  "name": "plantilladocumentacion",
+  "name": "adoptme-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API REST para sistema de adopción de mascotas",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha test/supertest.test.js"
+    "test": "mocha test/adoptions.test.js --timeout 10000",
+    "test:watch": "nodemon --exec \"npm test\"",
+    "test:coverage": "nyc npm test",
+    "docker:build": "docker build -t adoptme-api .",
+    "docker:run": "docker run -d --name adoptme-api -p 8080:8080 adoptme-api",
+    "docker:stop": "docker stop adoptme-api && docker rm adoptme-api",
+    "docker:push": "docker tag adoptme-api tu-usuario/adoptme-api:latest && docker push tu-usuario/adoptme-api:latest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "rest",
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "adoption",
+    "pets",
+    "swagger",
+    "docker"
+  ],
+  "author": "Tu Nombre <tu.email@ejemplo.com>",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^9.8.0",
@@ -22,10 +39,27 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.5",
     "multer": "^1.4.5-lts.1",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "chai": "^4.3.7",
-    "mocha": "^10.1.0"
-  }
+    "mocha": "^10.1.0",
+    "nodemon": "^3.0.1",
+    "nyc": "^15.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/lea-prado/TestingLeandro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lea-prado/TestingLeandro/issues"
+  },
+  "homepage": "https://github.com/lea-prado/TestingLeandro#readme"
 }

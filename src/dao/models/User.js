@@ -25,17 +25,12 @@ const schema = new mongoose.Schema({
         default:'user'
     },
     pets:{
-        type:[
-            {
-                _id:{
-                    type:mongoose.SchemaTypes.ObjectId,
-                    ref:'Pets'
-                }
-            }
-        ],
+        type: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Pets' }],
         default:[]
     }
-})
+}, {
+    timestamps: true // Añade createdAt y updatedAt automáticamente
+});
 
 const userModel = mongoose.model(collection,schema);
 

@@ -1,0 +1,8 @@
+2025-06-28 20:29:51 [INFO]: Database connected successfully
+2025-06-28 20:29:51 [INFO]: Server listening on port 8080
+2025-06-28 20:29:51 [INFO]: API Documentation available at http://localhost:8080/api-docs
+2025-06-28 20:36:40 [INFO]: GET /
+2025-06-28 20:36:40 [INFO]: GET /favicon.ico
+2025-06-28 20:36:40 [WARN]: Route not found: GET /favicon.ico
+2025-06-28 20:36:41 [INFO]: GET /prueba
+2025-06-28 20:36:41 [WARN]: Route not found: GET /prueba
